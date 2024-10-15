@@ -1,0 +1,83 @@
+/* Format for the body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    /* A gamer website cannot be other color than black thats almost a fact */
+    background-color: #000;
+    color: #fff;
+}
+
+/* Centering header 1 */
+h1 {
+    text-align: center;
+    color: #e6c629;
+}
+
+/* Display for the form */
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Reformatting the input and text area in the form */
+form input, form textarea {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #e6c629;
+    background-color: #333;
+    color: #ffffff;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Making the words color white because for some reason if I do it in the section above it does respond */
+input::placeholder, textarea::placeholder {
+    color: #f8f8f8;
+}
+
+/* Reformatting the button */
+button {
+    transition: background-color 0,3s ease;
+    padding: 10px 15px;
+    background-color: #e6c629;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Giving color to the hover */
+button:hover {background-color: #ffd700;}
+
+/* Padding the post */
+.post {
+    border-bottom: 1px solid #444;
+    padding: 10px;
+}
+
+/* Modifying the font size in post h2 */
+.post h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #e6c629; 
+}
+
+/* Modifying font-size */
+.post p {
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Modifying links */
+a {
+    margin-right: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Underlining the hover */
+a:hover { text-decoration: underline; }
+
+

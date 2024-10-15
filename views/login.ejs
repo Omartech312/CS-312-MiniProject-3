@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Sign In</h1>
+    <form action="/login" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Sign In</button>
+    </form>
+
+    <p>Don't have an account? <a href="/register">Sign up</a>.</p>
+</body>
+</html>

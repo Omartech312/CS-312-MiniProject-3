@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- naming Mini Porject 1 to the website -->
+        <title>League of legends Forum</title>
+        <!--Pulls the .css from the this filepath-->
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        <!-- prints the website header -->
+         <!--i thought it would be cool to make it somewhat themed-->
+        <h1>⚔️ League of Legends Forum ⚔️</h1>
+        
+        <!-- creates form -->
+        <% if (user) { %>
+        <form action="/new" method="POST">
+            <!--inputs from user (just getting the info stated ont he assignment)-->
+            
+                <!--title for post-->
+                <input type="text" name="title" placeholder="Post Title" required>
+                <!--body of post-->
+                <textarea name="body" placeholder="Write your post here" required></textarea>
+
+        <!-- botton ro publish the knowledge -->
+            <button type="submit">Publish knowledge</button>
+        </form>
+
+        <% } else { %>
+            <p><a href="/login">Login</a> or <a href="/register">Register</a> to share your knowledge</p>
+        <% } %>
+
+        <!-- Div that goes through all the post and prints their information using post.someData-->
+        <div id="posts">
+            <!--Traverses each post using index (basically a for loop for all elements of posts)-->
+            <% blogs.forEach(blog => { %>
+                <div class="blog-post">
+                  <h2><%= blog.title %></h2>
+                  <p><%= blog.body %></p>
+                  <small>By <%= blog.creator_name %> on <%= new Date(blog.date_created).toLocaleString() %></small>
+              
+                  <% if (user && blog.creator_user_id === user.id) { %>
+                    <!-- Only show Edit/Delete options if the logged-in user is the creator -->
+                    <a href="/edit/<%= blog.blog_id %>">Edit</a>
+                    <form action="/delete/<%= blog.blog_id %>" method="POST">
+                        <button type="submit">Delete</button>
+                      </form>                      
+                  <% } %>
+                </div>
+              <% }); %>              
+        </div>
+
+    </body>
+</html>
